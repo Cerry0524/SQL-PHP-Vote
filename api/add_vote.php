@@ -7,28 +7,27 @@ include_once "../db.php";
 
 
 
-$sql_chk_subject="select count(*) from `topics` where subject='{$_POST['subject']}'";
-$chk=$pdo->query($sql_chk_subject)->fetchColumn();
-if($chk){
+$sql_chk_subject = "select count(*) from `topics` where subject='{$_POST['subject']}'";
+$chk = $pdo->query($sql_chk_subject)->fetchColumn();
+if ($chk) {
     echo "主題被用掉了";
     echo "<a href='add_vote.php'>返回主題頁面</a>";
-}else{
+} else {
 
-    $sql="INSERT INTO `topics`( `subject`, `open_time`, `close_time`, `type`) 
+    $sql = "INSERT INTO `topics`( `subject`, `open_time`, `close_time`, `type`) 
              VALUES ('{$_POST['subject']}','{$_POST['open_time']}','{$_POST['close_time']}','{$_POST['type']}')";
-             
-    $pdo->exec($sql);
 
+    $pdo->exec($sql);
 }
 
 // 寫入選項
-$sql_subject_id="select `id` from `topics` where `subject`='{$_POST['subject']}'";
+$sql_subject_id = "select `id` from `topics` where `subject`='{$_POST['subject']}'";
 // echo $sql_subject_id;
-$subject_id=$pdo->query($sql_subject_id)->fetchColumn();
+$subject_id = $pdo->query($sql_subject_id)->fetchColumn();
 // echo $subject_id;
 
 foreach ($_POST['description'] as $desc) {
-    $sql="INSERT INTO `options`(`description`, `subject_id`)
+    $sql = "INSERT INTO `options`(`description`, `subject_id`)
                   VALUES ('$desc','$subject_id')";
     $pdo->exec($sql_option);
 }
