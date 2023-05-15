@@ -10,9 +10,9 @@
 
     <header>
         <a href="index.php">首頁</a>
-        <a href="result.php">結果</a>
-        <a href="login.php">登入</a>
-        <a href="reg.php">註冊</a>
+        <a href=".\front\result.php">結果</a>
+        <a href=".\front\login.php">登入</a>
+        <a href=".\front\reg.php">註冊</a>
         
     </header>
 
