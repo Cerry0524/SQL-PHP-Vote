@@ -3,6 +3,15 @@
 <?php
 
 $topic=$pdo->query("select * from `topics` where `id`='{$_GET['id']}'")->fetch(PDO::FETCH_ASSOC);
+if($topic['login']==1){
+    if(!isset($_SESSION['login'])){
+        $_SESSION['postion']="/index.php?do=vote&id={$_GET['id']}";//這裡要放絕對路徑，因為會員原本網頁位置無法判斷
+        header("location:index.php?do=login&msg=1");
+    };
+}
+
+
+
 $options=$pdo->query("select * from `options` where `subject_id`='{$_GET['id']}'")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -15,7 +24,13 @@ $options=$pdo->query("select * from `options` where `subject_id`='{$_GET['id']}'
         <?php
 foreach ($options as $idx => $opt) {
     echo "<li>";
-    echo "<input type='radio' name='desc' value='{$opt['id']}'>";
+    if($topic['type']==1){
+        echo "<input type='radio' name='desc' value='{$opt['id']}'>";
+    }else if($topic['type']==2){
+        echo "<input type='checkbox' name='desc[]' value='{$opt['id']}'>";
+    }
+   
+    
     echo "<span>".($idx+1)."</span>";
     echo "<span>{$opt['description']}</span>";
     echo "</li>";

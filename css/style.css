@@ -1,56 +1,121 @@
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
 }
-/* 初始化css用*對margin paddind使用0設定 */
 .time-set{
     display:flex;
-    width: 70%;
-    min-width: 615px;
+    width:70%;
+    min-width:615px;
     justify-content: space-between;
 }
 .time-item{
-    margin: 5px 0;
+    margin:5px 0;
 }
 .subject-input{
     font-family: '微軟正黑體',Arial, Helvetica, sans-serif;
-    padding: 3px;
-    font-size: 16px;
-    width: 50%;
+    padding:3px;
+    font-size:16px;
+    width:50%;
 }
 main{
-    width: 60%;
-    margin: auto;
+    width:60%;
+    margin:auto;
 }
 
-.topic-list{
+.topic-list,
+.vote-result,
+.vote-list{
     list-style-type: none;
 }
-.list-row{
+.list-row,
+.vote-option,
+.vote-option-title,
+.vote-subject,
+.vote-subject-title
+{
     display:flex;
-    width: 100%;
+    width:100%;
 }
 .list-row div:not(1){
     text-align: center;
 }
-.list-item-tiele:nth-child(1),
+.list-item-title:nth-child(1),
 .list-item:nth-child(1){
-    width: 40%;
+    width:40%;
 }
-.list-item-tiele:nth-child(2),
+
+.list-item-title:nth-child(2),
 .list-item:nth-child(2){
-    width: 5%;
+    width:5%;
 }
-.list-item-tiele:nth-child(3),
+
+.list-item-title:nth-child(3),
 .list-item:nth-child(3){
-    width: 15%;
+    width:15%;
 }
-.list-item-tiele:nth-child(4),
+
+.list-item-title:nth-child(4),
 .list-item:nth-child(4){
-    width: 5%;
+    width:5%;
 }
-.list-item-tiele:nth-child(5),
+.list-item-title:nth-child(5),
 .list-item:nth-child(5){
-    width: 25%;
+    width:25%;
 }
+
+.vote-option{
+    align-items:center;
+}
+.vote-item{
+    padding:5px;
+    line-height: 20px;
+}
+.vote-item:nth-child(1){
+    width:10%;
+    text-align:center;
+}
+.vote-item:nth-child(2){
+    width:60%;
+}
+.vote-item:nth-child(3){
+    width:20%;
+    text-align:center;
+}
+.vote-option-title .vote-item{
+    text-align: center;
+}
+
+/* 美化單多選按鈕 */
+.type-info{
+    padding: 2px 5px;
+    border-radius: 50px;
+    background:linear-gradient(45deg,rgb(124, 255, 253),rgb(63, 242, 63));
+    color: rgb(168, 76, 255);
+    border: 0;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.vip-login{
+    padding: 2px 5px;
+    border-radius: 50px 0px 50px;
+    background:linear-gradient(45deg,rgb(234, 255, 0),rgb(255, 212, 71));
+    color: rgb(0, 0, 0);
+    border: 0 ;
+    font-size: 12px;
+    font-weight: bolder;
+    box-shadow: 2px 2px 1px #CCC;
+}
+
+.normal{
+    padding: 2px 5px;
+    border-radius: 50px;
+    background:linear-gradient(45deg,rgb(132, 0, 255),rgb(227, 202, 238));
+    color: rgb(255, 255, 255);
+    border: 0;
+    font-size: 12px;
+    font-weight: bolder;
+    box-shadow: 2px 2px 1px #CCC;
+}
+
