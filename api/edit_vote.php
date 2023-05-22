@@ -50,16 +50,16 @@ if(!empty($_POST['description'])){
     }
 }
 
-echo "<pre>";
-print_r($options);
-echo "<pre>";
-echo "<pre>";
-print_r($_POST['description']);
-echo "<pre>";
-echo "<pre>";
-print_r($_POST['opt_id']);
-echo "<pre>";
+// echo "<pre>";
+// print_r($options);
+// echo "<pre>";
+// echo "<pre>";
+// print_r($_POST['description']);
+// echo "<pre>";
+// echo "<pre>";
+// print_r($_POST['opt_id']);
+// echo "<pre>";
 
 
-//  header("location:../backend.php");
+ header("location:../backend.php");
 
